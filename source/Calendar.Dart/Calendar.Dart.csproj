@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8345EF9-CADD-4BC0-A0F2-3CA8B16B9213}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Calendar.Dart</RootNamespace>
+    <AssemblyName>Calendar.Dart</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>false</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icons\app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AskControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AskControl.Designer.cs">
+      <DependentUpon>AskControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseControl.Designer.cs">
+      <DependentUpon>BaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CategoryControl.Designer.cs">
+      <DependentUpon>CategoryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreditsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CreditsControl.Designer.cs">
+      <DependentUpon>CreditsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DartButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EnterPlayerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnterPlayerControl.Designer.cs">
+      <DependentUpon>EnterPlayerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game.cs" />
+    <Compile Include="GuessControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GuessControl.Designer.cs">
+      <DependentUpon>GuessControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JokerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JokerControl.Designer.cs">
+      <DependentUpon>JokerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuessingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GuessingControl.Designer.cs">
+      <DependentUpon>GuessingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JokersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JokersControl.Designer.cs">
+      <DependentUpon>JokersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OptionsControl.Designer.cs">
+      <DependentUpon>OptionsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player.cs" />
+    <Compile Include="PlayerNameControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayerNameControl.Designer.cs">
+      <DependentUpon>PlayerNameControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PointsControl.Designer.cs">
+      <DependentUpon>PointsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PositionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PositionControl.Designer.cs">
+      <DependentUpon>PositionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo2.cs" />
+    <Compile Include="Question.cs" />
+    <Compile Include="QuestionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuestionControl.Designer.cs">
+      <DependentUpon>QuestionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Questions.cs" />
+    <Compile Include="RoundControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoundControl.Designer.cs">
+      <DependentUpon>RoundControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScoreControl.Designer.cs">
+      <DependentUpon>ScoreControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectGameControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SelectGameControl.Designer.cs">
+      <DependentUpon>SelectGameControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemedControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThemedControl.Designer.cs">
+      <DependentUpon>ThemedControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimelineControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TimelineControl.Designer.cs">
+      <DependentUpon>TimelineControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimelinePostionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TimelinePostionControl.Designer.cs">
+      <DependentUpon>TimelinePostionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TitleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TitleControl.Designer.cs">
+      <DependentUpon>TitleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerticalLabelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VerticalLabelControl.Designer.cs">
+      <DependentUpon>VerticalLabelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XContainerExtension.cs" />
+    <Compile Include="XElementExtension.cs" />
+    <Compile Include="XObjectException.cs" />
+    <EmbeddedResource Include="AskControl.resx">
+      <DependentUpon>AskControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseControl.resx">
+      <DependentUpon>BaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryControl.resx">
+      <DependentUpon>CategoryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditsControl.resx">
+      <DependentUpon>CreditsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterPlayerControl.resx">
+      <DependentUpon>EnterPlayerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuessControl.resx">
+      <DependentUpon>GuessControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JokerControl.resx">
+      <DependentUpon>JokerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuessingControl.resx">
+      <DependentUpon>GuessingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JokersControl.resx">
+      <DependentUpon>JokersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionsControl.resx">
+      <DependentUpon>OptionsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerNameControl.resx">
+      <DependentUpon>PlayerNameControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointsControl.resx">
+      <DependentUpon>PointsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PositionControl.resx">
+      <DependentUpon>PositionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="QuestionControl.resx">
+      <DependentUpon>QuestionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoundControl.resx">
+      <DependentUpon>RoundControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoreControl.resx">
+      <DependentUpon>ScoreControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectGameControl.resx">
+      <DependentUpon>SelectGameControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemedControl.resx">
+      <DependentUpon>ThemedControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimelineControl.resx">
+      <DependentUpon>TimelineControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimelinePostionControl.resx">
+      <DependentUpon>TimelinePostionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TitleControl.resx">
+      <DependentUpon>TitleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerticalLabelControl.resx">
+      <DependentUpon>VerticalLabelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Games\Demo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Games\Tagung.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\app.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
