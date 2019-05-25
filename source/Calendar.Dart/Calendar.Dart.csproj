@@ -125,11 +125,11 @@
     <Compile Include="JokersPanel.Designer.cs">
       <DependentUpon>JokersPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="LanguageControl.cs">
+    <Compile Include="LanguagePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LanguageControl.Designer.cs">
-      <DependentUpon>LanguageControl.cs</DependentUpon>
+    <Compile Include="LanguagePanel.Designer.cs">
+      <DependentUpon>LanguagePanel.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -257,8 +257,11 @@
     <EmbeddedResource Include="JokersPanel.resx">
       <DependentUpon>JokersPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LanguageControl.resx">
-      <DependentUpon>LanguageControl.cs</DependentUpon>
+    <EmbeddedResource Include="LanguagePanel.de.resx">
+      <DependentUpon>LanguagePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LanguagePanel.resx">
+      <DependentUpon>LanguagePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

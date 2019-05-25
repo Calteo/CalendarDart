@@ -76,11 +76,11 @@
             this.labelCaption.Text = "Spiel auswählen";
             this.labelCaption.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // SelectGameControl
+            // SelectGamePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.Controls.Add(this.tableLayoutPanel);
-            this.Name = "SelectGameControl";
+            this.Name = "SelectGamePanel";
             this.Size = new System.Drawing.Size(790, 514);
             this.Resize += new System.EventHandler(this.SelectGameControlResize);
             this.tableLayoutPanel.ResumeLayout(false);

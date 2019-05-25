@@ -12,9 +12,12 @@ namespace Calendar.Dart
         private void TitleControlResize(object sender, EventArgs e)
         {
             ScaleText(labelTitle, 0.7f, 0.5f);
+
+            ScaleText(buttonLanguage);
+            ScaleText(buttonStart);
         }
 
-        private void LabelTitleDoubleClick(object sender, EventArgs e)
+        private void ButtonStartClick(object sender, EventArgs e)
         {
             Game = Game.Load();
             if (Game != null)
@@ -26,9 +29,9 @@ namespace Calendar.Dart
             }
         }
 
-        private void labelTitle_Click(object sender, EventArgs e)
+        private void ButtonLanguageClick(object sender, EventArgs e)
         {
-
+            NextPanel<LanguagePanel>();
         }
     }
 }

@@ -46,6 +46,11 @@ namespace Calendar.Dart
             panel.Play();
         }
 
+        internal void ResetPanels()
+        {
+            Panels.Clear();
+        }
+
         public Game Game { get; set; }   
     }
 }
