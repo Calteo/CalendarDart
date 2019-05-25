@@ -1,6 +1,6 @@
 ﻿namespace Calendar.Dart
 {
-    partial class MainForm
+    partial class TitlePanel
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.labelMain = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TitlePanel));
+            this.labelTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // labelMain
+            // labelTitle
             // 
-            resources.ApplyResources(this.labelMain, "labelMain");
-            this.labelMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelMain.Name = "labelMain";
+            this.labelTitle.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.labelTitle, "labelTitle");
+            this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Click += new System.EventHandler(this.labelTitle_Click);
+            this.labelTitle.DoubleClick += new System.EventHandler(this.LabelTitleDoubleClick);
             // 
-            // MainForm
+            // TitleControl
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.Controls.Add(this.labelMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MainForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Shown += new System.EventHandler(this.MainFormShown);
+            this.BottomFraction = 0.3F;
+            this.Controls.Add(this.labelTitle);
+            this.Name = "TitleControl";
+            this.TopFraction = 0.2F;
+            this.Resize += new System.EventHandler(this.TitleControlResize);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label labelMain;
+        private System.Windows.Forms.Label labelTitle;
     }
 }
-

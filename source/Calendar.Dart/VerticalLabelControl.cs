@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace Calendar.Dart
 {
-    public partial class VerticalLabelControl : BaseControl
+    public partial class VerticalLabelControl : BasePanel
     {
         public VerticalLabelControl()
         {

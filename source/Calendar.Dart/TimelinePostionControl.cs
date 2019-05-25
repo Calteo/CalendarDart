@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Calendar.Dart
 {
-    public partial class TimelinePostionControl : BaseControl
+    public partial class TimelinePostionControl : BasePanel
     {
         public TimelinePostionControl()
         {

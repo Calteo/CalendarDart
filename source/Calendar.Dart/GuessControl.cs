@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Calendar.Dart
 {
-    internal partial class GuessControl : BaseControl
+    internal partial class GuessControl : BasePanel
     {
         public GuessControl()
         {

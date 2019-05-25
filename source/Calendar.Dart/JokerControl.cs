@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Calendar.Dart
 {
-    internal partial class JokerControl : BaseControl
+    internal partial class JokerControl : BasePanel
     {
         public JokerControl()
         {

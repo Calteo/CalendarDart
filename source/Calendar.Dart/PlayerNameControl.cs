@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Calendar.Dart
 {
-    public partial class PlayerNameControl : BaseControl
+    public partial class PlayerNameControl : BasePanel
     {
         public PlayerNameControl()
         {

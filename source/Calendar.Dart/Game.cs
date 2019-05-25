@@ -11,7 +11,8 @@ namespace Calendar.Dart
     {
         private const string Filename = "game.binary";
         private const string FilenameNew = "game.binary.new";
-        private const string FilenameBak = "game.binary.bak";        
+        private const string FilenameBak = "game.binary.bak";
+        private Questions _questions;
 
         public static Game Load()
         {
@@ -19,7 +20,7 @@ namespace Calendar.Dart
             var formatter = new BinaryFormatter();
             using (var stream = new FileStream(Filename, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                return (Game) formatter.Deserialize(stream);
+                return (Game)formatter.Deserialize(stream);
             }
         }
 
@@ -38,7 +39,24 @@ namespace Calendar.Dart
         }
 
         public List<Player> Players { get; } = new List<Player>();
-        public Questions Questions { get; set; }
+        public Questions Questions
+        {
+            get => _questions;
+            set
+            {
+                _questions = value;
+
+                var random = new Random();
+                var categories = _questions.Categories.Keys.ToList();
+                while (categories.Count > 0)
+                {
+                    var index = random.Next(categories.Count);
+                    var category = categories[index];
+                    categories.RemoveAt(index);
+                    Categories.Enqueue(category);
+                }
+            }
+        }
         public Question CurrentQuestion { get; set; }
         public Queue<string> Categories { get; } = new Queue<string>();
         public string CurrentCategory { get; set; }
@@ -70,18 +88,18 @@ namespace Calendar.Dart
             var max = offsets.Max();
             if (max == 0)
             {
-                var score = (int) Math.Round(maxPoints / active.Count);
+                var score = (int)Math.Round(maxPoints / active.Count);
                 active.ForEach(p => p.Points = score);
             }
             else
             {
                 var diffs = offsets.Select(o => max - o).ToArray();
                 var sum = diffs.Sum();
-                var points = diffs.Select(d => (int) Math.Round(d * maxPoints / sum)).ToArray();
+                var points = diffs.Select(d => (int)Math.Round(d * maxPoints / sum)).ToArray();
                 for (var i = 0; i < points.Length; i++)
                 {
                     if (active[i].Joker == Joker.Doppelt)
-                        active[i].Points = 2*points[i];
+                        active[i].Points = 2 * points[i];
                     if (active[i].Joker == Joker.Dreifach)
                         active[i].Points = 3 * points[i];
                     else
