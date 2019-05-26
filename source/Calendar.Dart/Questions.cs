@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -11,7 +12,25 @@ namespace Calendar.Dart
     {
         public static IEnumerable<string> GetGames()
         {
-            return Directory.GetFiles("Games", "*.xml");
+            var culture = CultureInfo.CurrentUICulture;
+
+            var paths = new List<string>();
+            while (culture != CultureInfo.InvariantCulture)
+            {
+                paths.Insert(0, culture.IetfLanguageTag);
+                culture = culture.Parent;
+            }
+
+            paths.Insert(0, "Games");
+            
+            var folder = Path.Combine(paths.ToArray());
+            while (!Directory.Exists(folder))
+            {
+                paths.RemoveAt(paths.Count - 1);
+                folder = Path.Combine(paths.ToArray());
+            }            
+            
+            return Directory.GetFiles(folder, "*.xml");
         }
 
         /// <summary>

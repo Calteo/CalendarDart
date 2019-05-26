@@ -58,7 +58,7 @@ namespace Calendar.Dart
         {
             if (keyData == (Keys.Control | Keys.Shift | Keys.Q))
             {
-                // RequestRestart?.Invoke(this, EventArgs.Empty);
+                NextPanel<TitlePanel>();
                 return true;
             }            
             return base.ProcessCmdKey(ref msg, keyData);

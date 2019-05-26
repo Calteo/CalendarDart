@@ -46,6 +46,7 @@
             this.dartButtonBack.Name = "dartButtonBack";
             this.dartButtonBack.Tag = "";
             this.dartButtonBack.UseVisualStyleBackColor = false;
+            this.dartButtonBack.Click += new System.EventHandler(this.ButtonBackClick);
             // 
             // tableLayoutPanel
             // 

@@ -25,6 +25,8 @@ namespace Calendar.Dart
         {
             base.Activate();
 
+            flowLayoutPanel.Controls.Clear();
+
             var cultures = new[] { "en", "de" }.Select(n => CultureInfo.GetCultureInfo(n)).OrderBy(c => c.NativeName);
 
             foreach (var culture in cultures)

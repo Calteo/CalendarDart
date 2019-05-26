@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -9,9 +10,28 @@ namespace Calendar.Dart
     [Serializable]
     class Game
     {
-        private const string Filename = "game.binary";
-        private const string FilenameNew = "game.binary.new";
-        private const string FilenameBak = "game.binary.bak";
+
+        private const string GameFilename = "game.binary";
+        private const string GameFilenameNew = "game.binary.new";
+        private const string GameFilenameBak = "game.binary.bak";
+
+        public static string Filename => Path.Combine(Folder, GameFilename);
+        public static string FilenameNew => Path.Combine(Folder, GameFilenameNew);
+        public static string FilenameBak => Path.Combine(Folder, GameFilenameBak);
+
+        public static string Folder
+        {
+            get
+            {
+                var folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CalendarDart", CultureInfo.CurrentUICulture.IetfLanguageTag);
+
+                if (!Directory.Exists(folder))
+                    Directory.CreateDirectory(folder);
+
+                return folder;
+            }
+        }
+
         private Questions _questions;
 
         public static Game Load()
