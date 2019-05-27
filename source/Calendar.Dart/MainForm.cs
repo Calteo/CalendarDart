@@ -18,15 +18,15 @@ namespace Calendar.Dart
 
         private Dictionary<Type, ThemedPanel> Panels { get; } = new Dictionary<Type, ThemedPanel>();
         
-        private ThemedPanel GetPanel<T>() where T : ThemedPanel
+        internal T GetPanel<T>() where T : ThemedPanel
         {
             if (!Panels.TryGetValue(typeof(T), out ThemedPanel panel))
             {
-                panel = Panels[typeof(T)] = Activator.CreateInstance<T>();
+                Panels[typeof(T)] = panel = Activator.CreateInstance<T>();
                 panel.Dock = DockStyle.Fill;
                 panel.MainForm = this;                
             }
-            return panel;
+            return (T)panel;
         }
 
         public void NextPanel<T>() where T : ThemedPanel

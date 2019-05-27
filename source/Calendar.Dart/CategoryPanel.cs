@@ -14,7 +14,7 @@ namespace Calendar.Dart
         {
             base.Activate();
 
-            var player = Game.Players[Game.Round % Game.Players.Count];
+            var player = Game.Players[(Game.Round-1) % Game.Players.Count];
 
             labelPlayer.Text = player.Name;
             labelPlayer.BackColor = player.Color;

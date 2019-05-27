@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -11,9 +13,13 @@ namespace Calendar.Dart
         public TimelinePanel()
         {
             InitializeComponent();
+
+            SolutionText = buttonNext.Text;
         }
 
         public bool ShowSolution { get; set; }
+
+        public string SolutionText { get; set; }
 
         public override void Activate()
         {
@@ -22,7 +28,7 @@ namespace Calendar.Dart
             ShowSolution = false;
             labelQuestion.Text = Game.CurrentQuestion.Text;
             ScaleText(labelQuestion);
-            buttonNext.Text = @"Lösung »";
+            buttonNext.Text = SolutionText;
 
             InsertPlayers(Game.Players.Where(p => p.Active).OrderBy(p => p.Guess).ToList());
         }
@@ -37,6 +43,7 @@ namespace Calendar.Dart
             PostionControls.Clear();
 
             var offset = (8 - players.Count) / 2 + 1;
+            var datePattern = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.Replace("yyyy", "\r\nyyyy");
 
             foreach (var player in players)
             {
@@ -45,8 +52,8 @@ namespace Calendar.Dart
                     Dock = DockStyle.Fill,
                     BackColor = player.Color,
                     NameText = player.Name,
-                    GuessText = player.Guess.ToString("dd.MM.\r\nyyyy")
-                };
+                    GuessText = player.Guess.ToString(datePattern, CultureInfo.CurrentUICulture)
+                };                
 
                 if (player.Color == Color.White)
                     control.ForeColor = Color.Black;
@@ -67,12 +74,12 @@ namespace Calendar.Dart
 
                 ShowSolution = true;
 
-                var solution = new Player { Color = Color.White, Name ="Lösung", Guess = Game.CurrentQuestion.Solution };
+                var solution = new Player { Color = Color.White, Name = "--»", Guess = Game.CurrentQuestion.Solution };
 
                 var players = Game.Players.Where(p=>p.Active).Concat(new[] {solution}).OrderBy(p => p.Guess).ToList();
                 InsertPlayers(players);
 
-                buttonNext.Text = @"Punkte »";
+                buttonNext.Text = MainForm.GetPanel<PointsPanel>().Caption;
 
                 BringToFront();
             }

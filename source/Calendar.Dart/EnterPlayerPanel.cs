@@ -54,7 +54,7 @@ namespace Calendar.Dart
         private void ButtonStartClick(object sender, EventArgs e)
         {
             CreatePlayer();
-
+            Game.Save();
             NextPanel<RoundPanel>();
         }
 

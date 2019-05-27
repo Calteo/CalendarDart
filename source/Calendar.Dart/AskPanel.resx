@@ -117,10 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="tableLayoutPanel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
+  <metadata name="buttonLeft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonLeft.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -130,13 +136,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonLeft.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 272</value>
+    <value>54, 289</value>
   </data>
   <data name="buttonLeft.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
   </data>
   <data name="buttonLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 59</value>
+    <value>236, 36</value>
   </data>
   <data name="buttonLeft.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -148,7 +154,7 @@
     <value>buttonLeft</value>
   </data>
   <data name="&gt;&gt;buttonLeft.Type" xml:space="preserve">
-    <value>Calendar.Dart.DartButton, Calendar.Dart, Version=1.0.7084.40980, Culture=neutral, PublicKeyToken=null</value>
+    <value>Calendar.Dart.DartButton, Calendar.Dart, Version=1.0.7086.40762, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;buttonLeft.Parent" xml:space="preserve">
     <value>tableLayoutPanel</value>
@@ -156,6 +162,9 @@
   <data name="&gt;&gt;buttonLeft.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="buttonRight.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="buttonRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -163,13 +172,13 @@
     <value>Flat</value>
   </data>
   <data name="buttonRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 272</value>
+    <value>349, 289</value>
   </data>
   <data name="buttonRight.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
   </data>
   <data name="buttonRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 59</value>
+    <value>236, 36</value>
   </data>
   <data name="buttonRight.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -181,7 +190,7 @@
     <value>buttonRight</value>
   </data>
   <data name="&gt;&gt;buttonRight.Type" xml:space="preserve">
-    <value>Calendar.Dart.DartButton, Calendar.Dart, Version=1.0.7084.40980, Culture=neutral, PublicKeyToken=null</value>
+    <value>Calendar.Dart.DartButton, Calendar.Dart, Version=1.0.7086.40762, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;buttonRight.Parent" xml:space="preserve">
     <value>tableLayoutPanel</value>
@@ -193,13 +202,13 @@
     <value>Fill</value>
   </data>
   <data name="labelMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 33</value>
+    <value>54, 35</value>
   </data>
   <data name="labelMessage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 0, 5, 0</value>
   </data>
   <data name="labelMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>531, 234</value>
+    <value>531, 249</value>
   </data>
   <data name="labelMessage.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -256,7 +265,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="buttonLeft" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonRight" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="labelMessage" Row="1" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,7,692307,Percent,38,46154,Percent,7,692307,Percent,38,46154,Percent,7,692307" /&gt;&lt;Rows Styles="Percent,7,692307,Percent,53,91499,Percent,15,88367,Percent,22,37136" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="buttonLeft" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="buttonRight" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="labelMessage" Row="1" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,7,692307,Percent,38,46154,Percent,7,692307,Percent,38,46154,Percent,7,692307" /&gt;&lt;Rows Styles="Percent,8,185163,Percent,57,3694,Percent,10,64071,Percent,23,80472" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -271,6 +280,6 @@
     <value>AskPanel</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>Calendar.Dart.ThemedPanel, Calendar.Dart, Version=1.0.7084.40980, Culture=neutral, PublicKeyToken=null</value>
+    <value>Calendar.Dart.ThemedPanel, Calendar.Dart, Version=1.0.7086.40762, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

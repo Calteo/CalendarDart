@@ -34,10 +34,7 @@
             // AskContinuePanel
             // 
             resources.ApplyResources(this, "$this");
-            this.LeftText = "Ja";
-            this.Message = "Soll das vorhandene Spiel fortgesetzt werden?";
             this.Name = "AskContinuePanel";
-            this.RightText = "Nein";
             this.ResumeLayout(false);
 
         }

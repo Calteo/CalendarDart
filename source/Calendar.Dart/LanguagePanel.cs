@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Calendar.Dart
@@ -18,6 +13,8 @@ namespace Calendar.Dart
             InitializeComponent();
         }
 
+        private static string[] SupportedCultures = { "en", "de" };
+
         const int margin = 3;
         const int count = 2;
 
@@ -25,11 +22,9 @@ namespace Calendar.Dart
         {
             base.Activate();
 
-            flowLayoutPanel.Controls.Clear();
+            flowLayoutPanel.Controls.Clear();            
 
-            var cultures = new[] { "en", "de" }.Select(n => CultureInfo.GetCultureInfo(n)).OrderBy(c => c.NativeName);
-
-            foreach (var culture in cultures)
+            foreach (var culture in SupportedCultures.Select(n => CultureInfo.GetCultureInfo(n)))
             {
                 var control = new DartButton
                 {

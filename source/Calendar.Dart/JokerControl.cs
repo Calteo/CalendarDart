@@ -16,14 +16,14 @@ namespace Calendar.Dart
             {
                 if (joker == Joker.NoGo)
                 {
-                    NoGoCommand = new ToolStripMenuItem(joker.ToString());
+                    NoGoCommand = new ToolStripMenuItem(joker.GetString());
                     NoGoCommand.Tag = joker;
                     NoGoCommand.DropDownOpening += NoGoCommandPopup;
                     contextMenuStrip.Items.Add(NoGoCommand);
                 }
                 else
                 {
-                    var item = contextMenuStrip.Items.Add(joker.ToString());
+                    var item = contextMenuStrip.Items.Add(joker.GetString());
                     item.Tag = joker;
                     item.Click += JokerClick;
                 }
@@ -77,7 +77,7 @@ namespace Calendar.Dart
                     if (_player != null)
                     {
                         labelName.Text = _player.Name;
-                        labelJoker.Text = _player.Joker.ToString();
+                        labelJoker.Text = _player.Joker.GetString();
                         BackColor = _player.Color;
                         SetLabelColor();
                     }
@@ -135,7 +135,7 @@ namespace Calendar.Dart
             Blocked = (Player)command.Tag;
             Blocked.Active = false;
             Player.Joker = Joker.NoGo;
-            labelJoker.Text = Player.Joker.ToString();
+            labelJoker.Text = Player.Joker.GetString();
         }
 
         private void JokerControlResize(object sender, EventArgs e)
@@ -155,7 +155,7 @@ namespace Calendar.Dart
             {
                 var joker = (Joker)item.Tag;
                 item.Available =
-                    joker == Joker.Nix
+                    joker == Joker.None
                     ||
                     (Player.Active || joker == Joker.NoGo) && Player.Jokers.Contains(joker);
             }

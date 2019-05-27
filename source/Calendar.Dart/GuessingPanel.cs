@@ -19,7 +19,7 @@ namespace Calendar.Dart
 
         private void GuessingControlResize(object sender, EventArgs e)
         {
-            ScaleText(labelCaption);            
+            ScaleText(labelQuestion);            
             ScaleText(buttonNext);
         }
 
@@ -27,8 +27,8 @@ namespace Calendar.Dart
         {
             base.Activate();
 
-            labelCaption.Text = Game.CurrentQuestion.Text;
-            ScaleText(labelCaption);
+            labelQuestion.Text = Game.CurrentQuestion.Text;
+            ScaleText(labelQuestion);
 
             Offset = 0;
             Init();
@@ -68,11 +68,11 @@ namespace Calendar.Dart
                 Init();
             else
             {
-                var guessed = Game.Players.Where(p => p.Active && p.Joker != Joker.Würfel).ToList();
+                var guessed = Game.Players.Where(p => p.Active && p.Joker != Joker.Dice).ToList();
                 var min = guessed.Min(p => p.Guess);
                 var max = guessed.Max(p => p.Guess);
 
-                Game.Players.Where(p => p.Active && p.Joker==Joker.Würfel).ToList()
+                Game.Players.Where(p => p.Active && p.Joker==Joker.Dice).ToList()
                     .ForEach(p => p.RollDice(min, max));
 
                 NextPanel<TimelinePanel>();

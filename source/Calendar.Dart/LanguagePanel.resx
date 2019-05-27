@@ -147,6 +147,9 @@
   <data name="labelCaption.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;labelCaption.Parent" xml:space="preserve">
+    <value>tableLayoutPanel</value>
+  </data>
   <data name="&gt;&gt;dartButtonBack.Name" xml:space="preserve">
     <value>dartButtonBack</value>
   </data>
@@ -157,16 +160,13 @@
     <value>5</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>Calendar.Dart.ThemedPanel, Calendar.Dart, Version=1.0.7085.21523, Culture=neutral, PublicKeyToken=null</value>
+    <value>Calendar.Dart.ThemedPanel, Calendar.Dart, Version=1.0.7086.41094, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel.Parent" xml:space="preserve">
     <value>tableLayoutPanel</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>LanguagePanel</value>
-  </data>
-  <data name="labelCaption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>638, 100</value>
   </data>
   <data name="flowLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>638, 191</value>
@@ -175,16 +175,13 @@
     <value>0, 0</value>
   </data>
   <data name="&gt;&gt;dartButtonBack.Type" xml:space="preserve">
-    <value>Calendar.Dart.DartButton, Calendar.Dart, Version=1.0.7085.21523, Culture=neutral, PublicKeyToken=null</value>
+    <value>Calendar.Dart.DartButton, Calendar.Dart, Version=1.0.7086.41094, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="dartButtonBack.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="tableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>705, 447</value>
-  </data>
-  <data name="labelCaption.Text" xml:space="preserve">
-    <value>Languages</value>
   </data>
   <data name="dartButtonBack.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -219,29 +216,32 @@
   <data name="labelCaption.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="&gt;&gt;labelCaption.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelCaption.Name" xml:space="preserve">
+    <value>labelCaption</value>
+  </data>
   <data name="&gt;&gt;tableLayoutPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelCaption.Name" xml:space="preserve">
-    <value>labelCaption</value>
+  <data name="labelCaption.Size" type="System.Drawing.Size, System.Drawing">
+    <value>638, 100</value>
   </data>
   <data name="flowLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="&gt;&gt;labelCaption.Parent" xml:space="preserve">
-    <value>tableLayoutPanel</value>
+  <data name="labelCaption.Text" xml:space="preserve">
+    <value>Languages</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel.Name" xml:space="preserve">
     <value>flowLayoutPanel</value>
   </data>
-  <data name="&gt;&gt;labelCaption.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;tableLayoutPanel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>705, 447</value>
@@ -251,8 +251,5 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>de</value>
   </metadata>
 </root>

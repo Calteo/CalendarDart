@@ -18,9 +18,8 @@ namespace Calendar.Dart
 
         protected override void OnPaintBackground(PaintEventArgs pevent)
         {
-            // base.OnPaintBackground(pevent);
-
-            pevent.Graphics.FillRectangle(new LinearGradientBrush(pevent.ClipRectangle, Color.Yellow, Color.Red, 90), pevent.ClipRectangle);
+            pevent.Graphics.FillRectangle(
+                new LinearGradientBrush(pevent.ClipRectangle, Color.Yellow, Color.Red, 90), pevent.ClipRectangle);
         }
 
         protected override void OnPaint(PaintEventArgs pevent)

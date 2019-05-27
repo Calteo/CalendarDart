@@ -166,6 +166,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Jokers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Jokers.resx</DependentUpon>
+    </Compile>
     <Compile Include="Question.cs" />
     <Compile Include="QuestionPanel.cs">
       <SubType>UserControl</SubType>
@@ -225,11 +230,17 @@
     <Compile Include="XContainerExtension.cs" />
     <Compile Include="XElementExtension.cs" />
     <Compile Include="XObjectException.cs" />
+    <EmbeddedResource Include="AskContinuePanel.de.resx">
+      <DependentUpon>AskContinuePanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AskContinuePanel.resx">
       <DependentUpon>AskContinuePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AskPanel.resx">
       <DependentUpon>AskPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskQuitPanel.de.resx">
+      <DependentUpon>AskQuitPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AskQuitPanel.resx">
       <DependentUpon>AskQuitPanel.cs</DependentUpon>
@@ -237,11 +248,20 @@
     <EmbeddedResource Include="BasePanel.resx">
       <DependentUpon>BasePanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CategoryPanel.de.resx">
+      <DependentUpon>CategoryPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CategoryPanel.resx">
       <DependentUpon>CategoryPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreditsPanel.de.resx">
+      <DependentUpon>CreditsPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreditsPanel.resx">
       <DependentUpon>CreditsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterPlayerPanel.de.resx">
+      <DependentUpon>EnterPlayerPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EnterPlayerPanel.resx">
       <DependentUpon>EnterPlayerPanel.cs</DependentUpon>
@@ -249,11 +269,17 @@
     <EmbeddedResource Include="GuessControl.resx">
       <DependentUpon>GuessControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GuessingPanel.de.resx">
+      <DependentUpon>GuessingPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="JokerControl.resx">
       <DependentUpon>JokerControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuessingPanel.resx">
       <DependentUpon>GuessingPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JokersPanel.de.resx">
+      <DependentUpon>JokersPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JokersPanel.resx">
       <DependentUpon>JokersPanel.cs</DependentUpon>
@@ -267,17 +293,28 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OptionsPanel.de.resx">
+      <DependentUpon>OptionsPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OptionsPanel.resx">
       <DependentUpon>OptionsPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerNameControl.resx">
       <DependentUpon>PlayerNameControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PointsPanel.de.resx">
+      <DependentUpon>PointsPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PointsPanel.resx">
       <DependentUpon>PointsPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PositionControl.resx">
       <DependentUpon>PositionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Jokers.de.resx" />
+    <EmbeddedResource Include="Properties\Jokers.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Jokers.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -295,14 +332,23 @@
     <EmbeddedResource Include="RoundPanel.resx">
       <DependentUpon>RoundPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ScorePanel.de.resx">
+      <DependentUpon>ScorePanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScorePanel.resx">
       <DependentUpon>ScorePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectGamePanel.de.resx">
+      <DependentUpon>SelectGamePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectGamePanel.resx">
       <DependentUpon>SelectGamePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemedPanel.resx">
       <DependentUpon>ThemedPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimelinePanel.de.resx">
+      <DependentUpon>TimelinePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TimelinePanel.resx">
       <DependentUpon>TimelinePanel.cs</DependentUpon>

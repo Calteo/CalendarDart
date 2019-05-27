@@ -118,9 +118,9 @@ namespace Calendar.Dart
                 var points = diffs.Select(d => (int)Math.Round(d * maxPoints / sum)).ToArray();
                 for (var i = 0; i < points.Length; i++)
                 {
-                    if (active[i].Joker == Joker.Doppelt)
+                    if (active[i].Joker == Joker.Double)
                         active[i].Points = 2 * points[i];
-                    if (active[i].Joker == Joker.Dreifach)
+                    if (active[i].Joker == Joker.Triple)
                         active[i].Points = 3 * points[i];
                     else
                         active[i].Points = points[i];

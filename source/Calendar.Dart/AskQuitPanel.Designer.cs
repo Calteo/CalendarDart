@@ -34,10 +34,7 @@
             // AskQuitPanel
             // 
             resources.ApplyResources(this, "$this");
-            this.LeftText = "Ja";
-            this.Message = "Wollen Sie das Spiel beenden?";
             this.Name = "AskQuitPanel";
-            this.RightText = "Nein";
             this.ResumeLayout(false);
 
         }

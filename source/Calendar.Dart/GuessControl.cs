@@ -46,7 +46,7 @@ namespace Calendar.Dart
 
                 switch (Player.Joker)
                 {
-                    case Joker.Orakel:
+                    case Joker.Oracle:
                     {
                         // maskedEditBoxYear.Mask = "****";
                         editBoxYear.Text = @"????";
@@ -63,7 +63,7 @@ namespace Calendar.Dart
                         break;
                     }
 
-                    case Joker.Würfel:
+                    case Joker.Dice:
                     {
                         // maskedEditBoxDay.Mask = maskedEditBoxMonth.Mask = "**";
                         // maskedEditBoxDay.Text = maskedEditBoxMonth.Text = @"??";
@@ -107,7 +107,7 @@ namespace Calendar.Dart
             var color = Color.DarkOrange;
 
             var text = $"{editBoxDay.Text}.{editBoxMonth.Text}.{editBoxYear.Text}";
-            if (Player.Joker == Joker.Orakel)
+            if (Player.Joker == Joker.Oracle)
             {
                 text = $"{editBoxDay.Text}.{editBoxMonth.Text}.{Solution.Year}";
             }
@@ -115,7 +115,7 @@ namespace Calendar.Dart
             {
                 text = $"{Solution.Day}.{Solution.Month}.{editBoxYear.Text}";
             }
-            if (Player.Joker == Joker.Würfel)
+            if (Player.Joker == Joker.Dice)
             {
                 color = Color.ForestGreen;
             }
@@ -129,7 +129,7 @@ namespace Calendar.Dart
                 if (editBoxYear.Text != "")
                     color = Color.Red;
             }
-            else if (Player.Joker==Joker.Orakel)
+            else if (Player.Joker==Joker.Oracle)
             {
                 if (editBoxDay.Text != "" || editBoxMonth.Text != "")
                     color = Color.Red;

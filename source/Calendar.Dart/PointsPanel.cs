@@ -12,6 +12,8 @@ namespace Calendar.Dart
             InitializeComponent();
         }
 
+        public string Caption => labelCaption.Text;
+
         public override void Activate()
         {
             base.Activate();

@@ -28,14 +28,14 @@ namespace Calendar.Dart
         /// </summary>
         public Player()
         {
-            Jokers = Enum.GetValues(typeof(Joker)).Cast<Joker>().Where(j => j != Joker.Nix).ToList();
+            Jokers = Enum.GetValues(typeof(Joker)).Cast<Joker>().Where(j => j != Joker.None).ToList();
         }
 
         public string Name { get; set; }
         public Color Color { get; set; }
         public List<Joker> Jokers { get; }
 
-        public Joker Joker { get; set;} = Joker.Nix;
+        public Joker Joker { get; set;} = Joker.None;
         public int Score { get; set; }
         public int Points { get; set; }
 
@@ -57,7 +57,7 @@ namespace Calendar.Dart
         {
             get
             {
-                if (!Active || Joker==Joker.Würfel) return true;
+                if (!Active || Joker==Joker.Dice) return true;
                 return Guess != DateTime.MinValue;
             }
         }
@@ -66,7 +66,7 @@ namespace Calendar.Dart
         {
             Active = true;
             Guess = DateTime.MinValue;
-            Joker = Joker.Nix;
+            Joker = Joker.None;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -89,12 +89,20 @@ namespace Calendar.Dart
 
     enum Joker
     {
-        Nix,
-        Doppelt,
-        Dreifach,
+        None,
+        Double,
+        Triple,
         Lucky,
         NoGo,
-        Orakel,
-        Würfel,
+        Oracle,
+        Dice,
+    }
+
+    internal static class JokerExtension
+    {
+        public static string GetString(this Joker joker)
+        {
+            return Properties.Jokers.ResourceManager.GetString(joker.ToString());
+        }
     }
 }

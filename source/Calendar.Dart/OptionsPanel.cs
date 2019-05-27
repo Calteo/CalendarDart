@@ -35,8 +35,7 @@ namespace Calendar.Dart
         }
 
         private void NextPanel()
-        {
-            Game.Save();
+        {            
             NextPanel<EnterPlayerPanel>();
         }
     }

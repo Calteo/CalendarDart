@@ -11,21 +11,26 @@ namespace Calendar.Dart
             InitializeComponent();
          }
 
-        [Category("Dart")]
+        public override void Play()
+        {
+            AskControlResize(this, EventArgs.Empty);
+        }
+
+        [Category("Dart"), Localizable(true)]
         public string Message
         {
             get => labelMessage.Text;
             set => labelMessage.Text = value;
         }
 
-        [Category("Dart")]
+        [Category("Dart"), Localizable(true)]
         public string LeftText
         {
             get => buttonLeft.Text;
             set => buttonLeft.Text = value;
         }
 
-        [Category("Dart")]
+        [Category("Dart"), Localizable(true)]
         public string RightText
         {
             get => buttonRight.Text;
@@ -34,7 +39,7 @@ namespace Calendar.Dart
 
         private void AskControlResize(object sender, EventArgs e)
         {
-            ScaleText(labelMessage);
+            ScaleText(labelMessage, 1f, 0.8f);
             ScaleText(buttonLeft);
             ScaleText(buttonRight);
         }
