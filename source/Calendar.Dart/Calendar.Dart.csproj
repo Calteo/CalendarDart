@@ -368,6 +368,7 @@
     <EmbeddedResource Include="VerticalLabelControl.resx">
       <DependentUpon>VerticalLabelControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CreateArtifacts.ps1" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
