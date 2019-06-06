@@ -12,9 +12,8 @@ if (Test-Path $artifacts)
 }
 $folder = New-Item -ItemType Directory -Path $artifacts 
 
-Copy-Item third-party-licenses -Destination $artifacts\third-party-licenses -Recurse -PassThru | ForEach-Object { Write-Output "--> $($_.Name)" }
 Copy-Item README.md -Destination $artifacts -PassThru | ForEach-Object { Write-Output "--> $($_.Name)" }
-Copy-Item LICENSE.md -Destination $artifacts -PassThru | ForEach-Object { Write-Output "--> $($_.Name)" }
+Copy-Item LICENSE -Destination $artifacts -PassThru | ForEach-Object { Write-Output "--> $($_.Name)" }
 
 # $f = New-Item -ItemType Directory -Path $artifacts\bin
 
