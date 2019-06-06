@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.editBoxMonth = new System.Windows.Forms.TextBox();
-            this.editBoxDay = new System.Windows.Forms.TextBox();
+            this.editBox2 = new System.Windows.Forms.TextBox();
+            this.editBox1 = new System.Windows.Forms.TextBox();
             this.labelPlayer = new System.Windows.Forms.Label();
             this.editBoxYear = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel.SuspendLayout();
@@ -44,8 +44,8 @@
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel.Controls.Add(this.editBoxMonth, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.editBoxDay, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.editBox2, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.editBox1, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.labelPlayer, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.editBoxYear, 1, 0);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -56,37 +56,37 @@
             this.tableLayoutPanel.Size = new System.Drawing.Size(488, 65);
             this.tableLayoutPanel.TabIndex = 0;
             // 
-            // editBoxMonth
+            // editBox2
             // 
-            this.editBoxMonth.BackColor = System.Drawing.Color.Bisque;
-            this.editBoxMonth.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.editBoxMonth.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.editBoxMonth.ForeColor = System.Drawing.Color.White;
-            this.editBoxMonth.Location = new System.Drawing.Point(378, 3);
-            this.editBoxMonth.MaxLength = 2;
-            this.editBoxMonth.Name = "editBoxMonth";
-            this.editBoxMonth.ShortcutsEnabled = false;
-            this.editBoxMonth.Size = new System.Drawing.Size(33, 24);
-            this.editBoxMonth.TabIndex = 2;
-            this.editBoxMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.editBoxMonth.WordWrap = false;
-            this.editBoxMonth.TextChanged += new System.EventHandler(this.MaskedEditBoxTextChanged);
+            this.editBox2.BackColor = System.Drawing.Color.Bisque;
+            this.editBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.editBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editBox2.ForeColor = System.Drawing.Color.White;
+            this.editBox2.Location = new System.Drawing.Point(378, 3);
+            this.editBox2.MaxLength = 2;
+            this.editBox2.Name = "editBox2";
+            this.editBox2.ShortcutsEnabled = false;
+            this.editBox2.Size = new System.Drawing.Size(33, 24);
+            this.editBox2.TabIndex = 2;
+            this.editBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.editBox2.WordWrap = false;
+            this.editBox2.TextChanged += new System.EventHandler(this.EditBoxTextChanged);
             // 
-            // editBoxDay
+            // editBox1
             // 
-            this.editBoxDay.BackColor = System.Drawing.Color.Bisque;
-            this.editBoxDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.editBoxDay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.editBoxDay.ForeColor = System.Drawing.Color.White;
-            this.editBoxDay.Location = new System.Drawing.Point(339, 3);
-            this.editBoxDay.MaxLength = 2;
-            this.editBoxDay.Name = "editBoxDay";
-            this.editBoxDay.ShortcutsEnabled = false;
-            this.editBoxDay.Size = new System.Drawing.Size(33, 24);
-            this.editBoxDay.TabIndex = 1;
-            this.editBoxDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.editBoxDay.WordWrap = false;
-            this.editBoxDay.TextChanged += new System.EventHandler(this.MaskedEditBoxTextChanged);
+            this.editBox1.BackColor = System.Drawing.Color.Bisque;
+            this.editBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.editBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editBox1.ForeColor = System.Drawing.Color.White;
+            this.editBox1.Location = new System.Drawing.Point(339, 3);
+            this.editBox1.MaxLength = 2;
+            this.editBox1.Name = "editBox1";
+            this.editBox1.ShortcutsEnabled = false;
+            this.editBox1.Size = new System.Drawing.Size(33, 24);
+            this.editBox1.TabIndex = 1;
+            this.editBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.editBox1.WordWrap = false;
+            this.editBox1.TextChanged += new System.EventHandler(this.EditBoxTextChanged);
             // 
             // labelPlayer
             // 
@@ -112,7 +112,7 @@
             this.editBoxYear.TabIndex = 3;
             this.editBoxYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.editBoxYear.WordWrap = false;
-            this.editBoxYear.TextChanged += new System.EventHandler(this.MaskedEditBoxTextChanged);
+            this.editBoxYear.TextChanged += new System.EventHandler(this.EditBoxTextChanged);
             // 
             // GuessControl
             // 
@@ -132,7 +132,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.Label labelPlayer;
         private System.Windows.Forms.TextBox editBoxYear;
-        private System.Windows.Forms.TextBox editBoxMonth;
-        private System.Windows.Forms.TextBox editBoxDay;
+        private System.Windows.Forms.TextBox editBox2;
+        private System.Windows.Forms.TextBox editBox1;
     }
 }

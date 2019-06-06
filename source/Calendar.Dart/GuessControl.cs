@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -11,6 +12,10 @@ namespace Calendar.Dart
         public GuessControl()
         {
             InitializeComponent();
+
+            var separator = CultureInfo.CurrentUICulture.DateTimeFormat.DateSeparator.Replace(".", @"\.");
+            
+            DatePattern = new Regex($@"\d{1,2}{separator}\d{1,2}{separator}\d{1,4}", RegexOptions.Compiled | RegexOptions.Singleline);
         }
 
         [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -26,29 +31,23 @@ namespace Calendar.Dart
         {
             get => _player;
             set
-            {
+            {                
                 _player = value;
                 BackColor = _player.Color;
                 labelPlayer.Text = _player.Name;
-                editBoxMonth.Text = editBoxDay.Text = editBoxYear.Text = "";
-                editBoxDay.Visible = editBoxMonth.Visible
+                editBox2.Text = editBox1.Text = editBoxYear.Text = "";
+                editBox1.Visible = editBox2.Visible
                     = editBoxYear.Visible = Player.Active;
 
-                editBoxDay.ReadOnly = editBoxMonth.ReadOnly
+                editBox1.ReadOnly = editBox2.ReadOnly
                     = editBoxYear.ReadOnly = false;
 
-                /*
-                maskedEditBoxDay.Mask = maskedEditBoxMonth.Mask = "##";
-                maskedEditBoxYear.Mask = "####";
-                */
-
-                editBoxDay.TabStop = editBoxMonth.TabStop = editBoxYear.TabStop = true;
+                editBox1.TabStop = editBox2.TabStop = editBoxYear.TabStop = true;
 
                 switch (Player.Joker)
                 {
                     case Joker.Oracle:
                     {
-                        // maskedEditBoxYear.Mask = "****";
                         editBoxYear.Text = @"????";
                         editBoxYear.ReadOnly = true;
                         editBoxYear.TabStop = false;
@@ -56,23 +55,19 @@ namespace Calendar.Dart
                     }
                     case Joker.Lucky:
                     {
-                        // maskedEditBoxDay.Mask = maskedEditBoxMonth.Mask = "**";
-                        editBoxDay.Text = editBoxMonth.Text = @"??";
-                        editBoxDay.ReadOnly = editBoxMonth.ReadOnly = true;
-                        editBoxDay.TabStop = editBoxMonth.TabStop = false;
+                        editBox1.Text = editBox2.Text = @"??";
+                        editBox1.ReadOnly = editBox2.ReadOnly = true;
+                        editBox1.TabStop = editBox2.TabStop = false;
                         break;
                     }
 
                     case Joker.Dice:
                     {
-                        // maskedEditBoxDay.Mask = maskedEditBoxMonth.Mask = "**";
-                        // maskedEditBoxDay.Text = maskedEditBoxMonth.Text = @"??";
-                        // maskedEditBoxYear.Mask = "****";
-                        // maskedEditBoxYear.Text = @"????";
+                        editBox1.Text = editBox2.Text = @"??";
+                        editBoxYear.Text = @"????";
 
-                        editBoxDay.ReadOnly = editBoxMonth.ReadOnly
-                            = editBoxYear.ReadOnly = true;
-                        editBoxDay.TabStop = editBoxMonth.TabStop = editBoxYear.TabStop = false;
+                        editBox1.ReadOnly = editBox2.ReadOnly = editBoxYear.ReadOnly = true;
+                        editBox1.TabStop = editBox2.TabStop = editBoxYear.TabStop = false;
                         break;
                     }
                 }
@@ -81,7 +76,7 @@ namespace Calendar.Dart
 
         public void SetFocus()
         {
-            editBoxDay.Focus();
+            editBox1.Focus();
         }
 
         private void GuessControlResize(object sender, EventArgs e)
@@ -89,27 +84,29 @@ namespace Calendar.Dart
             ScaleText(labelPlayer);
 
             ScaleToCell(editBoxYear, tableLayoutPanel, "00");
-            ScaleToCell(editBoxDay, tableLayoutPanel, "0");
-            ScaleToCell(editBoxMonth, tableLayoutPanel, "0");
+            ScaleToCell(editBox1, tableLayoutPanel, "0");
+            ScaleToCell(editBox2, tableLayoutPanel, "0");
 
-            editBoxDay.Margin = new Padding(3, (tableLayoutPanel.ClientSize.Height - editBoxDay.Height) / 2, 10, 0);
-            editBoxMonth.Margin = new Padding(3, (tableLayoutPanel.Height - editBoxMonth.Height) / 2, 10, 0);
+            editBox1.Margin = new Padding(3, (tableLayoutPanel.ClientSize.Height - editBox1.Height) / 2, 10, 0);
+            editBox2.Margin = new Padding(3, (tableLayoutPanel.Height - editBox2.Height) / 2, 10, 0);
             editBoxYear.Margin = new Padding(3, (tableLayoutPanel.Height - editBoxYear.Height) / 2, 10, 0);
         }
 
-        private readonly Regex _datePattern = new Regex(@"\d{1,2}\.\d{1,2}\.\d{1,4}",
-            RegexOptions.Compiled | RegexOptions.Singleline);
+        private Regex DatePattern { get; set; }
 
-        private void MaskedEditBoxTextChanged(object sender, EventArgs e)
+        private void EditBoxTextChanged(object sender, EventArgs e)
         {
             if (!Player.Active) return;
 
             var color = Color.DarkOrange;
 
-            var text = $"{editBoxDay.Text}.{editBoxMonth.Text}.{editBoxYear.Text}";
+            var culture = CultureInfo.CurrentUICulture;
+            var parts = culture.DateTimeFormat.ShortDatePattern.Split(culture.DateTimeFormat.DateSeparator.ToCharArray());
+
+            var text = $"{editBox1.Text}.{editBox2.Text}.{editBoxYear.Text}";
             if (Player.Joker == Joker.Oracle)
             {
-                text = $"{editBoxDay.Text}.{editBoxMonth.Text}.{Solution.Year}";
+                text = $"{editBox1.Text}.{editBox2.Text}.{Solution.Year}";
             }
             else if (Player.Joker == Joker.Lucky)
             {
@@ -119,7 +116,7 @@ namespace Calendar.Dart
             {
                 color = Color.ForestGreen;
             }
-            else if (DateTime.TryParse(text, out DateTime guess) && _datePattern.IsMatch(text))
+            else if (DateTime.TryParse(text, out DateTime guess) && DatePattern.IsMatch(text))
             {
                 color = Color.ForestGreen;
                 Player.Guess = guess;
@@ -131,13 +128,13 @@ namespace Calendar.Dart
             }
             else if (Player.Joker==Joker.Oracle)
             {
-                if (editBoxDay.Text != "" || editBoxMonth.Text != "")
+                if (editBox1.Text != "" || editBox2.Text != "")
                     color = Color.Red;
             }
             else
             {                
-                if (editBoxDay.Text != ""
-                    || editBoxMonth.Text != ""
+                if (editBox1.Text != ""
+                    || editBox2.Text != ""
                     || editBoxYear.Text != "")
                 {
                     color = Color.Red;
@@ -146,8 +143,8 @@ namespace Calendar.Dart
 
             Guessed?.Invoke(this, EventArgs.Empty);
 
-            editBoxDay.BackColor = color;
-            editBoxMonth.BackColor = color;
+            editBox1.BackColor = color;
+            editBox2.BackColor = color;
             editBoxYear.BackColor = color;
         }
 
