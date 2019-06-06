@@ -1,4 +1,4 @@
-﻿Param (
+Param (
 [Parameter(Position=1)]
 [String]$artifacts="artifacts"
 )
@@ -18,6 +18,7 @@ Copy-Item LICENSE -Destination $artifacts -PassThru | ForEach-Object { Write-Out
 # $f = New-Item -ItemType Directory -Path $artifacts\bin
 
 $fullname = $folder.FullName
-Get-ChildItem -Path "**/CreateArtifacts.ps1" | ForEach-Object { "$_" + " $fullname" } | Invoke-Expression 
+# Get-ChildItem -Path "**/CreateArtifacts.ps1" | ForEach-Object { "$_" + " $fullname" } | Invoke-Expression 
+Get-ChildItem -Path "**/CreateArtifacts.ps1" | ForEach-Object { Write-Output "$_" + " $fullname" }
 
 Pop-Location
