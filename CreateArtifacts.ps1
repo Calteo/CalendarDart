@@ -16,8 +16,6 @@ Copy-Item README.md -Destination $artifacts -PassThru | ForEach-Object { Write-O
 Copy-Item LICENSE -Destination $artifacts -PassThru | ForEach-Object { Write-Output "--> $($_.Name)" }
 
 $fullname = $folder.FullName
-Write-Output $fullname 
-# Get-ChildItem -Path "**/CreateArtifacts.ps1" | ForEach-Object { "$_" + " $fullname" } | Invoke-Expression 
-Get-ChildItem -Path "**/CreateArtifacts.ps1" | ForEach-Object { Write-Output "$_" + " $fullname" }
+Get-ChildItem -Path "source/**/CreateArtifacts.ps1" | ForEach-Object { "$_" + " $fullname" } | Invoke-Expression 
 
 Pop-Location
