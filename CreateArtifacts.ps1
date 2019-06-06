@@ -15,9 +15,8 @@ $folder = New-Item -ItemType Directory -Path $artifacts
 Copy-Item README.md -Destination $artifacts -PassThru | ForEach-Object { Write-Output "--> $($_.Name)" }
 Copy-Item LICENSE -Destination $artifacts -PassThru | ForEach-Object { Write-Output "--> $($_.Name)" }
 
-# $f = New-Item -ItemType Directory -Path $artifacts\bin
-
 $fullname = $folder.FullName
+Write-Output $fullname 
 # Get-ChildItem -Path "**/CreateArtifacts.ps1" | ForEach-Object { "$_" + " $fullname" } | Invoke-Expression 
 Get-ChildItem -Path "**/CreateArtifacts.ps1" | ForEach-Object { Write-Output "$_" + " $fullname" }
 
