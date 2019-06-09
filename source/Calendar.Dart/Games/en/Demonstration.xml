@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <questions>
-  <question category="Events" text="Something funny happend in china." solution="14.11.1938" />
-  <question category="Science Fiction" text="Elon Musk lands on mars." solution="15.04.2031" />
+  <category id="Gobal Events">
+    <question text="Something funny happend in china." solution="11/14/1938" />  
+  </category>
+  <category id="Science Fiction">
+    <question text="Elon Musk lands on mars." solution="04/15/2031" />
+  </category>
 </questions>

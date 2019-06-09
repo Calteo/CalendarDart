@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Xml.Linq;
 
 namespace Calendar.Dart
@@ -11,12 +12,10 @@ namespace Calendar.Dart
         /// </summary>
         public Question(XElement element)
         {
-            Category = element.RequiredAttribute("category").Value;
             Text = element.RequiredAttribute("text").Value;
-            Solution = DateTime.Parse(element.RequiredAttribute("solution").Value);
+            Solution = DateTime.Parse(element.RequiredAttribute("solution").Value, CultureInfo.CurrentUICulture);
         }
 
-        public string Category { get; }
         public string Text { get; }
         public DateTime Solution { get; }
     }

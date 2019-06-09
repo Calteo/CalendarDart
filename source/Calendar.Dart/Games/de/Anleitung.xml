@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <questions>
-  <question category="Naturalien" text="In China fällt der Reissack um." solution="14.11.1938" />
-  <question category="Science Fiction" text="Elon Musk landet auf dem Mars." solution="15.04.2031" />
+  <category id="Naturalien">
+    <question text="In China fällt der Reissack um." solution="14.11.1938" />  
+  </category>
+  <category id="Science Fiction">
+    <question text="Elon Musk landet auf dem Mars." solution="15.04.2031" />
+  </category>  
 </questions>

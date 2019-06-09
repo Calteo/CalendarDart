@@ -40,9 +40,8 @@ namespace Calendar.Dart
         {
             var document = XDocument.Load(filename);
             var root = document.RequiredElement("questions");
-            Categories = root.Elements("question").Select(e => new Question(e))
-                .GroupBy(q => q.Category)
-                .ToDictionary(g => g.Key, g => g.ToList());
+            Categories = root.Elements("category")
+                .ToDictionary(e => e.RequiredAttribute("id").Value, e => e.Elements("question").Select(q => new Question(q)).ToList());
         }
 
         public Dictionary<string, List<Question>> Categories { get; }
